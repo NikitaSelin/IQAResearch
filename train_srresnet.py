@@ -26,7 +26,7 @@ if __name__ == "__main__":
 
     # параметры обучения модели
     save_every = 20
-    print_every = 2000
+    print_every = 50
     start_epoch = 0
     iters = 2e5
     batch_size = 16
@@ -71,7 +71,7 @@ if __name__ == "__main__":
     print(f"[*] Start training SRResNet model based on MSE loss.")
     print("device: {}".format(device))
     psnr_epochs = int(iters // len(dataloader))
-    for epoch in range(start_epoch, psnr_epochs):
+    for epoch in range(start_epoch, 100):
         progress_bar = tqdm(enumerate(dataloader), total=len(dataloader))
         avg_loss = 0.0
         for i, (lr_imgs, hr_imgs) in progress_bar:
@@ -93,7 +93,7 @@ if __name__ == "__main__":
             scaler.update()
 
             avg_loss += mse_loss.item()
-            progress_bar.set_description(f"[{epoch + 1}/{psnr_epochs}][{i + 1}/{len(dataloader)}] "
+            progress_bar.set_description(f"[{epoch + 1}/{100}][{i + 1}/{len(dataloader)}] "
                                         f"MSE loss: {mse_loss.item():.4f}")
             total_iter = len(dataloader) * epoch + i
             

@@ -75,7 +75,7 @@ if __name__ == '__main__':
     scaler_d = amp.GradScaler()
     scaler_g = amp.GradScaler()
         
-    for epoch in range(start_epoch, epochs):
+    for epoch in range(start_epoch, 100):
         progress_bar = tqdm(enumerate(dataloader), total=len(dataloader))
         g_avg_loss = 0.0
         d_avg_loss = 0.0
@@ -122,7 +122,7 @@ if __name__ == '__main__':
             d_avg_loss += adversarial_loss.item()
             g_avg_loss += perceptual_loss.item()
 
-            progress_bar.set_description(f"[{epoch + 1}/{epochs}][{i + 1}/{len(dataloader)}] "
+            progress_bar.set_description(f"[{epoch + 1}/{100}][{i + 1}/{len(dataloader)}] "
                                         f"Loss_D: {adversarial_loss.item():.4f} Loss_G: {perceptual_loss.item():.4f} ")
 
             total_iter = len(dataloader) * epoch + i
