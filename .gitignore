@@ -1,0 +1,8 @@
+1024x768/*.jpg
+downscaled_images/*.jpg
+ESRGAN/LR/*.jpg
+ESRGAN/results/*.png
+SwinIR/results/*
+*.pth
+__pycache__
+*.csv
