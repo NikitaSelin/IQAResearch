@@ -30,7 +30,7 @@ def downscale_images(folder_path, output_folder):
 
 # Example usage:
 if __name__ == "__main__":
-    input_folder = "1024x768"
+    input_folder = "original_images"
     output_folder = "downscaled_images"
     
     downscale_images(input_folder, output_folder)
