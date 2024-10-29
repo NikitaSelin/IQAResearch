@@ -6,3 +6,7 @@ SwinIR/results/*
 *.pth
 __pycache__
 *.csv
+bicubic
+original_images
+results_ESRGAN
+results_Real-ESRGAN
